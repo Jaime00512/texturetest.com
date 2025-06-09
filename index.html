@@ -2,25 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Video a Pantalla Completa</title>
+  <title>Video desde 0:33 en bucle</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
+      background-color: black;
     }
-    iframe {
+    video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: none;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v1KHgOVhqAQ?si=oUb0TU86k4lNnzNm&amp;start=32" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <video id="miVideo" autoplay muted loop>
+    <source src="video/Video para asustar a tus amigos 2" type="video/mp4">
+    Tu navegador no soporta el video HTML5.
+  </video>
+
+  <script>
+    const video = document.getElementById('miVideo');
+
+    // Espera a que los metadatos del video estén listos (para conocer duración, etc.)
+    video.addEventListener('loadedmetadata', () => {
+      video.currentTime = 33; // Empieza en el segundo 33
+    });
+  </script>
 </body>
 </html>
+
