@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aea</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Prueba Video</title>
+  <style>
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      z-index: -1;
+      object-fit: cover;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Video de fondo -->
   <video id="background-video" autoplay muted loop>
     <source src="video/fake.mp4" type="video/mp4">
     Tu navegador no soporta el video HTML5.
