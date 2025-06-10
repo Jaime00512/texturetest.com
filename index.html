@@ -2,27 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba Video</title>
-  <style>
-    #background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100vw;
-      min-height: 100vh;
-      z-index: -1;
-      object-fit: cover;
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-  </style>
+  <title>Tienda Random</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <video autoplay muted loop>
-    <source src="video/fake.mp4" type="video/mp4">
-  </video>
+
+  <!-- Encabezado con video de introducción -->
+  <header class="header">
+    <video autoplay muted loop class="intro-video">
+      <source src="video/fake.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="overlay">
+      <h1>Tienda Random</h1>
+      <p>¡Todo lo que imaginas, lo encuentras aquí!</p>
+    </div>
+  </header>
+
+  <!-- Menú de navegación -->
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Productos</a></li>
+      <li><a href="#">Ofertas</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <section>
+      <h2>Nuestros productos</h2>
+      <p>Encuentra ropa, tecnología, juguetes y más a precios increíbles.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tienda Random - Todos los derechos reservados</p>
+  </footer>
+
 </body>
 </html>
+
