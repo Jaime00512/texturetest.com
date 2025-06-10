@@ -2,47 +2,147 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tienda con Intro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Video centrado en pantalla -->
-  <div class="video-container">
-    <video id="introVideo" controls loop>
-      <source src="video/intro.mp4" type="video/mp4">
-      Tu navegador no soporta videos HTML5.
-    </video>
-    <p>Haz clic para reproducir con sonido</p>
-  </div>
-    <div class="overlay">
-      <h1>Tienda Random</h1>
-      <p>¡Todo lo que imaginas, lo encuentras aquí!</p>
-    </div>
+  <!-- Sonido de fondo -->
+  <audio autoplay loop id="audioBackground">
+    <source src="audio/C H I L L V I B E S  Chill & aesthetic music playlist.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Encabezado -->
+  <header class="header">
+    <h1>TechStore</h1>
+    <p>Encuentra los mejores gadgets y tecnología al mejor precio</p>
   </header>
 
   <!-- Menú de navegación -->
-  <nav class="nav">
+  <nav class="navbar">
     <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Ofertas</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
-  <!-- Contenido principal -->
-  <main class="main-content">
-    <section>
-      <h2>Nuestros productos</h2>
-      <p>Encuentra ropa, tecnología, juguetes y más a precios increíbles.</p>
-    </section>
-  </main>
+  <!-- Sección de Inicio -->
+  <section id="inicio" class="inicio">
+    <h2>Bienvenidos a TechStore</h2>
+    <p>Descubre los mejores dispositivos y gadgets para ti</p>
+        <video controls>
+  <source src="video/fake.mp4" type="video/mp4">
+  Tu navegador no soporta videos HTML5.
+</video>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Tienda Random - Todos los derechos reservados</p>
+  <!-- Sección de Productos -->
+  <section id="productos" class="productos">
+    <h2>Productos Destacados</h2>
+    <div class="productos-flex">
+      <div class="producto-item">
+        <img src="img/smarphone 5g.jpg" alt="Producto 1">
+        <p>Smartphone 5G</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/laptop 3.jpeg" alt="Producto 2">
+        <p>Laptop Ultrabook</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/smart 4.jpeg" alt="Producto 3">
+        <p>Smartwatch</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Servicios -->
+  <section id="servicios" class="servicios">
+    <h2>Servicios</h2>
+    <div class="servicios-flex">
+      <div class="servicio-item">
+        <img src="img/tecnologi 2.jpg" alt="Servicio 1">
+        <p>Asesoría en tecnología</p>
+      </div>
+      <div class="servicio-item">
+        <img src="img/coporte.jpg" alt="Servicio 2">
+        <p>Instalación y soporte</p>
+      </div>
+      <div class="servicio-item">
+        <img src="img/reparaion 5.jpeg" alt="Servicio 3">
+        <p>Reparación de gadgets</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Blog -->
+  <section id="blog" class="blog">
+    <h2>Blog de Tecnología</h2>
+    <div class="blog-post">
+      <h3>Últimas tendencias en smartphones</h3>
+      <p>Exploramos las últimas innovaciones en dispositivos móviles y cómo afectan nuestra vida diaria...</p>
+      <a href="#">Leer más</a>
+    </div>
+    <div class="blog-post">
+      <h3>Guía de compra para tu próxima laptop</h3>
+      <p>Conoce qué características buscar en una laptop para elegir la mejor opción para ti...</p>
+      <a href="#">Leer más</a>
+    </div>
+    <div class="blog-post">
+      <h3>Cómo elegir el smartwatch perfecto</h3>
+      <p>Te ayudamos a escoger el smartwatch ideal según tus necesidades y presupuesto...</p>
+      <a href="#">Leer más</a>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+    <ul>
+      <li><a href="#">Política de privacidad</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Twitter</a></li>
+    </ul>
   </footer>
+
+  <script>
+    // Script para pausar y reanudar el audio de fondo
+    let audio = document.getElementById('audioBackground');
+    audio.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+  </script>
 
 </body>
 </html>
-
