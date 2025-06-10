@@ -2,17 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tienda Random</title>
+  <title>Tienda con Intro</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Encabezado con video de introducción -->
-  <header class="header">
-    <video autoplay muted loop class="intro-video">
-      <source src="video/fake.mp4" type="video/mp4">
+  <!-- Video centrado en pantalla -->
+  <div class="video-container">
+    <video id="introVideo" controls loop>
+      <source src="video/intro.mp4" type="video/mp4">
       Tu navegador no soporta videos HTML5.
     </video>
+    <p>Haz clic para reproducir con sonido</p>
+  </div>
     <div class="overlay">
       <h1>Tienda Random</h1>
       <p>¡Todo lo que imaginas, lo encuentras aquí!</p>
